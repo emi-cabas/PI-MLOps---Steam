@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 app = FastAPI()
-app.title = "Proyecto Individual 1: Steam"
+app.title = "Proyecto Individual 1: Steam - Emily"
 
 import pandas as pd
 dframe = pd.read_csv("steam_csv")
@@ -22,9 +22,6 @@ def genero(year):
     }
     
     return generos_mas_vendidos_dict
-
-# Crea una instancia de FastAPI
-app = FastAPI()
 
 # Define la ruta para llamar a la función genero(year)
 @app.get("/genero/{year}", tags=["Top 5 Géneros"])
