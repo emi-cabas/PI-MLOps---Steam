@@ -183,6 +183,10 @@ from sklearn.metrics import mean_squared_error
 
 # Define la función prediccion(genero, sentiment) con tu lógica
 def prediccion(genero, sentiment):
+    # Comprobar si el género o el sentimiento no están presentes en el dataset
+    if (df1['genres'].apply(lambda x: genero in x)).sum() == 0 or (df1['sentiment'] == sentiment).sum() == 0:
+        return "No hay información disponible acerca de esos parámetros", None
+    
     # Filtro el DF por género y sentimiento
     datos_filtrados = df1[df1['genres'].apply(lambda x: genero in x)]
     
