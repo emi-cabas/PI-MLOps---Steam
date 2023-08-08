@@ -2,6 +2,7 @@ from fastapi import FastAPI
 app = FastAPI()
 app.title = "Proyecto Individual 1: Steam - Emily"
 
+import numpy as np
 import pandas as pd
 dframe = pd.read_csv("steam_csv")
 
@@ -86,11 +87,10 @@ def earlyacces(year):
     if df_year.empty:
         return {"mensaje": "No hay información acerca de ese año"}
     else:
-        cantidad_juegos_early = df_year['early_access'].sum()
-    
+        cantidad_juegos_early = df_year['early_access'].sum()  
     early_access_dict = {
         'Año': year,
-        'Cantidad de Juegos': cantidad_juegos_early
+        'Cantidad de Juegos con Early Access': cantidad_juegos_early 
     }
     
     return early_access_dict
