@@ -81,23 +81,18 @@ async def get_specs(year: int):
 
 # Función Early_Access:
 def earlyacces(year):
-    # Filtro el DF para obtener solo los datos del año proporcionado:
     df_year = dframe[dframe['release_year'] == year]
-
-    # Verificar si hay datos para el año ingresado en el DataFrame:
+    cantidad_juegos_early = df_year['early_access'].sum()
     if df_year.empty:
         return {"mensaje": "No hay información acerca de ese año"}
 
-    # Calcular la cantidad de juegos con early access para el año proporcionado:
-    cantidad_juegos_early = df_year['early_access'].sum()
-
-    # Crear un diccionario con la información del año y la cantidad de juegos con early access:
     early_access_dict = {
         'Año': year,
         'Cantidad de Juegos': cantidad_juegos_early
     }
-
+    
     return early_access_dict
+
 
 # Ruta para llamar a la función earlyacces(year):
 @app.get("/earlyacces/{year}", tags=["Juegos con Early Access"])

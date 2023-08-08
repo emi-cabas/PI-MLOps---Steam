@@ -48,7 +48,3 @@ Usé un modelo de regresión lineal y elegí como parámetros "genre" y "sentime
 - def earlyacces: Se ingresa un año y retorna la cantidad de juegos lanzados con early access.
 - def sentiment: Según el año de lanzamiento, se devuelve una lista con la cantidad de registros que se encuentran categorizados con un análisis de sentimiento.
 - def metascore: Top 5 juegos según año con mayor metascore.
-
-## Links
-
-
