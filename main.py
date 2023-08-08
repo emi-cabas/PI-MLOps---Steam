@@ -90,7 +90,7 @@ def earlyacces(year):
         cantidad_juegos_early = df_year['early_access'].sum()  
     early_access_dict = {
         'Año': year,
-        'Cantidad de Juegos con Early Access': cantidad_juegos_early 
+        'Cantidad de Juegos con Early Access': int(cantidad_juegos_early)
     }
     
     return early_access_dict
