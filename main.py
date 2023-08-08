@@ -82,10 +82,12 @@ async def get_specs(year: int):
 # Función Early_Access:
 def earlyacces(year):
     df_year = dframe[dframe['release_year'] == year]
-    cantidad_juegos_early = df_year['early_access'].sum()
+    
     if df_year.empty:
         return {"mensaje": "No hay información acerca de ese año"}
-
+    else:
+        cantidad_juegos_early = df_year['early_access'].sum()
+    
     early_access_dict = {
         'Año': year,
         'Cantidad de Juegos': cantidad_juegos_early
